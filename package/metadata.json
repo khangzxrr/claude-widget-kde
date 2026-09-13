@@ -1,0 +1,18 @@
+{
+    "KPackageStructure": "Plasma/Applet",
+    "KPlugin": {
+        "Authors": [
+            {
+                "Name": "khangzxrr"
+            }
+        ],
+        "Category": "Utilities",
+        "Description": "Recent Claude Code sessions: click to jump back into one. Shows live status and plan usage.",
+        "Icon": "utilities-terminal",
+        "Id": "com.github.khangzxrr.claudesessions",
+        "License": "MIT",
+        "Name": "Claude Sessions",
+        "Version": "0.1.0"
+    },
+    "X-Plasma-API-Minimum-Version": "6.0"
+}
