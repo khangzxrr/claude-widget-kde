@@ -4,6 +4,10 @@ A panel widget that lists your recent Claude Code sessions so you can jump back 
 
 ![Claude Sessions popup](docs/screenshot.png)
 
+In the panel: the icon gets a green badge when a session is waiting for you, next to your current session usage.
+
+![Claude Sessions in the panel](docs/panel.png)
+
 - **Session history** from `~/.claude/projects`: title (your `/rename`, else Claude's auto title, else first prompt), project folder, git branch, prompt count, last prompt. Grouped into Running now / Today / Yesterday / This week / Older. Searchable.
 - **Click to continue.** A running session gets its terminal window raised (via a KWin script) instead of being resumed twice. A closed session opens a terminal in its project folder running `claude --resume <id>`.
 - **Live status** from `~/.claude/sessions`: a pulsing dot while Claude is working, a green dot when it is waiting for you. The panel icon shows a green badge when any session is waiting.
