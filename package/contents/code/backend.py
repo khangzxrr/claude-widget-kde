@@ -356,14 +356,18 @@ def kde_default_terminal():
     return Path(match.group(1)).name if match else None
 
 
+def process_name(pid):
+    try:
+        return Path(f"/proc/{pid}/comm").read_text().strip()
+    except OSError:
+        return None
+
+
 def detect_terminal():
     # prefer whatever terminal the user is already running claude in
     for info in live_sessions().values():
         for pid in ancestors(info["pid"]):
-            try:
-                comm = Path(f"/proc/{pid}/comm").read_text().strip()
-            except OSError:
-                continue
+            comm = process_name(pid)
             name = COMM_ALIASES.get(comm, comm)
             if name in TERMINALS and shutil.which(name):
                 return name

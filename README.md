@@ -43,3 +43,11 @@ python3 package/contents/code/backend.py open <session-id> --dry-run
 ```
 
 Transcripts are indexed by mtime/size in `~/.cache/claude-sessions-plasmoid/`, so rescans only re-read files that changed. Usage is cached on disk and fetched at most once per interval to stay clear of the endpoint's rate limit.
+
+## Tests
+
+```sh
+python3 -m unittest discover -s tests -v
+```
+
+Standard library only. The tests use temporary Claude and cache directories and mock out terminals, KWin, notifications and the network, so they never touch your real sessions or launch anything.
